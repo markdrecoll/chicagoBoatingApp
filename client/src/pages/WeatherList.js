@@ -10,36 +10,35 @@ function WeatherList() {
         API.getAllWeather()
         
         .then(weatherData => {
-            console.log(weatherData.data.hours);
 
             var goodWeather = []
 
             for(let i=12; i<weatherData.data.hours.length; i+=24){
                 console.log(' looping!!',weatherData.data.hours[i]);
                 goodWeather.push(weatherData.data.hours[i]) 
-                
             }
-            console.log('')
             setWeatherList(goodWeather);
         })
-
-
      }, []);
 
+    // function celciusToFahrenheit(temp){
+    //     return (temp*(9/5))+32;
+    // }
 
-
-    console.log('Weather list!!!', weatherList)
+    // let convertedTemp = celciusToFahrenheit(weatherItem.waterTemperature.noaa);
 
     return (
         <>
         <h1>Weather List</h1>
         {weatherList.map(weatherItem => (
             <div className="card" style={{"width": "18rem"}}>
-            
             <div className="card-body">
               <h5 className="card-title">{weatherItem.time}</h5>
-              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" className="btn btn-primary">Go somewhere</a>
+              <p className="card-text">{weatherItem.waterTemperature.noaa}° C</p>
+              <p className="card-text">{weatherItem.windSpeed.noaa} Kph</p>
+              {/* <p className="card-text">{weatherItem.waveHeight.sg}</p> */}
+              <a href="#" class="btn btn-secondary btn-sm">Create Itinerary</a><br /><br />
+              <a href="#" class="btn btn-secondary btn-sm">View Itinerary</a>
             </div>
           </div>
         ))}

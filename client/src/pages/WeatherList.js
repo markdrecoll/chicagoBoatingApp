@@ -4,7 +4,9 @@ function WeatherList() {
 
     const [weatherList, setWeatherList] = useState([]);
 
-    const [newWeatherList, setNewWeatherList] = useState([]);
+    const [waveHeight, setWaveHeight] = useState({
+
+    });
 
     useEffect(() => {
         API.getAllWeather()
@@ -21,22 +23,24 @@ function WeatherList() {
         })
      }, []);
 
-    // function celciusToFahrenheit(temp){
-    //     return (temp*(9/5))+32;
-    // }
-
-    // let convertedTemp = celciusToFahrenheit(weatherItem.waterTemperature.noaa);
+    function celciusToFahrenheit(temp){
+        return ((temp*(9/5))+32).toFixed(1);
+    }
 
     return (
         <>
         <h1>Weather List</h1>
         {weatherList.map(weatherItem => (
+            // console.log(weatherItem.waveHeight.meteo)
+            
+            
             <div className="card" style={{"width": "18rem"}}>
+                {/* {setWaveHeight(weatherItem.waveHeight)} */}
             <div className="card-body">
               <h5 className="card-title">{weatherItem.time}</h5>
-              <p className="card-text">{weatherItem.waterTemperature.noaa}° C</p>
+              <p className="card-text">{celciusToFahrenheit(weatherItem.waterTemperature.noaa)}° F</p>
               <p className="card-text">{weatherItem.windSpeed.noaa} Kph</p>
-              {/* <p className="card-text">{weatherItem.waveHeight.sg}</p> */}
+              {/* <p className="card-text">{weatherItem.waveHeight.meteo}</p> */}
               <a href="#" class="btn btn-secondary btn-sm">Create Itinerary</a><br /><br />
               <a href="#" class="btn btn-secondary btn-sm">View Itinerary</a>
             </div>

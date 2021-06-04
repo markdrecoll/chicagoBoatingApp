@@ -10,4 +10,7 @@ export default {
     getAllWeather : function(){
         return axios.get("/api/weather");
     }
+    // getRegularWeather : function(){
+    //     return axios.get("");
+    // }
 }

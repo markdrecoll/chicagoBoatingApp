@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import EmpApp from './components/EmpApp';
 import EmpList from './pages/EmpList';
+import WeatherList from './pages/WeatherList';
 
 function App() {
     return (
@@ -15,8 +16,8 @@ function App() {
                             <Route exact path={"/"}>
                                 <EmpApp />
                             </Route>
-                            <Route exact path={"/emplist"}>
-                                <EmpList />
+                            <Route exact path={"/weatherlist"}>
+                                <WeatherList />
                             </Route>
 
                         </Switch>

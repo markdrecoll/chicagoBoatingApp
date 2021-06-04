@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// export default {
+//     getAllEmps : function(){
+//         return axios.get("/api/employees");
+//     }
+// }
+
 export default {
-    getAllEmps : function(){
-        return axios.get("/api/employees");
+    getAllWeather : function(){
+        return axios.get("/api/weather");
     }
 }

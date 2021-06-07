@@ -1,10 +1,22 @@
 const express = require("express");
+<<<<<<< HEAD
+const cors = require("cors");
+
+=======
+>>>>>>> 74fa18c695d5abf2f90a0e02fadc4845fecc1c24
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
+app.use(cors());
+
+app.use('login', (req,res) => {
+  res.send({
+    token: 'test'
+  })
+})
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)

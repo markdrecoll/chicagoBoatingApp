@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WeatherList from './pages/WeatherList';
+<<<<<<< HEAD
 import React, {useState} from 'react';
 import Login from './components/Login'
 
@@ -13,6 +14,9 @@ function getToken(){
     return userToken.token
 }
 
+=======
+import Harbor from './pages/Harbor';
+>>>>>>> 74fa18c695d5abf2f90a0e02fadc4845fecc1c24
 
 function App() {
 
@@ -36,6 +40,11 @@ function App() {
                             </Route>
                             <Route exact path={"/weatherlist"}>
                                 <WeatherList />
+                            </Route>
+
+
+                            <Route exact path={"/harbor"}>
+                                <Harbor />
                             </Route>
 
                         </Switch>

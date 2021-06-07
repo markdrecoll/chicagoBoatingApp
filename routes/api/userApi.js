@@ -6,12 +6,10 @@ router.route("/login").post( (req, res) => {
 
     user.findOne({username: req.body.username}).then(function(loginUser){
         loginUser.comparePassword(req.body.password, function(err, isMatch){
-            if(isMatch){
-                res.send({token: 'test'});
-            }            
+            if(isMatch){res.send({token: 'test'});}            
         });
-    })
-})
+    });
+});
 
 router.post("/signup", (req, res) => {
     console.log('sign up route!!', req.body);
@@ -20,7 +18,7 @@ router.post("/signup", (req, res) => {
         res.send({
             token: 'test'
         });
-    })
-})
+    });
+});
 
 module.exports = router;

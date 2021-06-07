@@ -19,18 +19,20 @@ const CreateItinerary = (props) => {
     setBackdrop(value);
   }
 
+  
+
   return (
     <div>
       {/* modal for taking in a user itinerary */}
-      <Button color="primary" onClick={toggle}>Create Itinerary</Button>
+      <Button color="primary" className="btn-sm" onClick={toggle}>Create Itinerary</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>{props.weatherDataStuff.time}</ModalHeader>
         <ModalBody>
 
             <Form inline onSubmit={(e) => e.preventDefault()}>
             <FormGroup>
-            <Label for="itineraryText">What would you like to do?</Label>{' '}
-            <Input type="text" name="itineraryText" id="itineraryText" onChange={changeBackdrop} />
+            <Label for="itineraryText">Below you can save your intended activities for the day.</Label>{' '}
+            <Input type="textarea" name="itineraryText" id="itineraryText" onChange={changeBackdrop} />
             </FormGroup>
             <FormGroup className="mx-2" check>
             </FormGroup>
@@ -39,8 +41,8 @@ const CreateItinerary = (props) => {
             
         </ModalBody>
         <ModalFooter>
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
-          <Button color="primary" onClick={toggle}>Submit</Button>{' '}
+          <Button color="secondary" className="btn-sm" onClick={toggle}>Cancel</Button>
+          <Button color="primary" className="btn-sm" onClick={toggle}>Submit</Button>{' '}
         </ModalFooter>
       </Modal>
     </div>

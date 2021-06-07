@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
+import CreateItinerary from '../components/CreateItinerary';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
+
 function WeatherList() {
 
     const [weatherList, setWeatherList] = useState([]);
@@ -40,8 +44,9 @@ function WeatherList() {
               <p className="card-text">Wind Speed: {kphToMph(weatherItem.windSpeed.noaa)} Mph Direction:{weatherItem.windDirection.noaa}°</p>
               {/* <p className="card-text">{weatherItem.windDirection.noaa}°</p> */}
               {/* <p className="card-text">{weatherItem.waveHeight.meteo}</p> */}
-              <a href="#" class="btn btn-secondary btn-sm">Create Itinerary</a><br /><br />
-              <a href="#" class="btn btn-secondary btn-sm">View Itinerary</a>
+
+              <CreateItinerary weatherDataStuff = {weatherItem}/>
+              <a href="#" className="btn btn-secondary btn-sm">View Itinerary</a>
             </div>
           </div>
         ))}

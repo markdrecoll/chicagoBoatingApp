@@ -9,10 +9,7 @@ function App() {
         <Router>
             <div className="container">
                 <div className="row">
-
                     <div className="col-12">
-
-
                         <Switch>
                             <Route exact path={"/"}>
                                 <EmpApp />
@@ -20,7 +17,6 @@ function App() {
                             <Route exact path={"/weatherlist"}>
                                 <WeatherList />
                             </Route>
-
 
                             <Route exact path={"/harbor"}>
                                 <Harbor />

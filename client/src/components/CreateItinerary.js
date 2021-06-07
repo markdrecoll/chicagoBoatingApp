@@ -19,8 +19,6 @@ const CreateItinerary = (props) => {
     setBackdrop(value);
   }
 
-  
-
   return (
     <div>
       {/* modal for taking in a user itinerary */}

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import EmpApp from './components/EmpApp';
 import EmpList from './pages/EmpList';
 import WeatherList from './pages/WeatherList';
+import Harbor from './pages/Harbor';
 
 function App() {
     return (
@@ -18,6 +19,10 @@ function App() {
                             </Route>
                             <Route exact path={"/weatherlist"}>
                                 <WeatherList />
+                            </Route>
+
+                            <Route exact path={"/harbor"}>
+                                <Harbor />
                             </Route>
 
                         </Switch>

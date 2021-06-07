@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const axios = require('axios')
 
-const weatherParamsToPassIn = "waterTemperature,waveHeight,cloudCover,windSpeed"
+const weatherParamsToPassIn = "waterTemperature,waveHeight,cloudCover,windSpeed,waveDirection,windDirection"
 
 router.get('/', function(req,res){
     axios.get(`https://api.stormglass.io/v2/weather/point?lat=41.9&lng=-87.6&params=${weatherParamsToPassIn}`,

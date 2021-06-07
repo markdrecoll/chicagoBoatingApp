@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import CreateItinerary from '../components/CreateItinerary';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
 
 function WeatherList() {
 
     const [weatherList, setWeatherList] = useState([]);
 
-    const [waveHeight, setWaveHeight] = useState({});
+    // const [waveHeight, setWaveHeight] = useState({});
 
     useEffect(() => {
         API.getAllWeather()

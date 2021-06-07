@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
+import API from '../utils/api'
 
 const CreateItinerary = (props) => {
   const {
@@ -11,15 +12,21 @@ const CreateItinerary = (props) => {
   const [backdrop, setBackdrop] = useState(true);
   const toggle = () => setModal(!modal);
 
-  const changeBackdrop = e => {
-    let value = e.target.value;
-    if (value !== 'static') {
-      value = JSON.parse(value);
-    }
-    setBackdrop(value);
+  const [userActivityState, setUserActivityState] = useState("");
+
+  const handleTyping = e => {
+      setUserActivityState(e.target.value);
   }
 
-  
+  const handleSave = () => {
+
+    API.saveActivity(userActivityState).then(function(data) {
+        console.log('Save happened!', data)
+        toggle()
+    })
+
+
+  }
 
   return (
     <div>
@@ -32,7 +39,7 @@ const CreateItinerary = (props) => {
             <Form inline onSubmit={(e) => e.preventDefault()}>
             <FormGroup>
             <Label for="itineraryText">Below you can save your intended activities for the day.</Label>{' '}
-            <Input type="textarea" name="itineraryText" id="itineraryText" onChange={changeBackdrop} />
+            <Input type="textarea" name="itineraryText" id="itineraryText" onChange={handleTyping} />
             </FormGroup>
             <FormGroup className="mx-2" check>
             </FormGroup>
@@ -42,7 +49,7 @@ const CreateItinerary = (props) => {
         </ModalBody>
         <ModalFooter>
           <Button color="secondary" className="btn-sm" onClick={toggle}>Cancel</Button>
-          <Button color="primary" className="btn-sm" onClick={toggle}>Submit</Button>{' '}
+          <Button color="primary" className="btn-sm" onClick={handleSave}>Submit</Button>{' '}
         </ModalFooter>
       </Modal>
     </div>

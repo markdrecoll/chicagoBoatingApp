@@ -1,9 +1,27 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import EmpApp from './components/EmpApp';
-import EmpList from './pages/EmpList';
 import WeatherList from './pages/WeatherList';
+import React, {useState} from 'react';
+import Login from './components/Login'
+
+function setToken(userToken){
+    sessionStorage.setItem('token', JSON.stringify(userToken))
+}; 
+
+function getToken(){
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    return userToken.token
+}
+
 
 function App() {
+
+    const token = getToken()
+
+    if (!token) {
+        return <Login setToken={setToken}/>
+    }
+
     return (
         <Router>
             <div className="container">

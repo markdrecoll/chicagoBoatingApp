@@ -1,12 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const session = require('express-session');
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
 
 // Define middleware here
 app.use(cors());
@@ -23,8 +21,8 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-
 };
+
 app.use(session(sess));
 // Add routes, both API and view
 app.use(routes);

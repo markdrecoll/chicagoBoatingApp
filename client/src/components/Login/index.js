@@ -5,25 +5,12 @@ import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
 async function loginUser(credentials) {
-    console.log('credentails', credentials)
 
+    console.log('credentails', credentials)
     return Axios.post('/api/user/login', credentials)
-   
-    // return fetch("http://localhost:3001/api/user/login", {
-    //     method: "POST",
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(credentials)
-    // })
-    //     .then(data => data.json())
 }
 
 async function signupUser(credentials) {
-    // return fetch("http://localhost:3001/api/user/signup", {
-    //     method: "POST",
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(credentials)
-    // })
-    //     .then(data => data.json())
 
         return  Axios.post('/api/user/signup', credentials)
 }
@@ -31,7 +18,6 @@ async function signupUser(credentials) {
 export default function Login(props) {
 
     const history = useHistory()
-
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
@@ -42,14 +28,10 @@ export default function Login(props) {
             username,
             password
         })
+
         console.log('WHAT WE GET BACK FROM LOGIN!!!', login)
         props.setLoginState(login.data.logged_in)
         history.push('/weatherList')
-        // Axios.get('/api/user/loginCheck', {withCredentials: true}).then(function(loginCheck) {
-        //     console.log('login check!!!', loginCheck)
-        // })
-       // setToken(token);
-    
     }
 
     const handleSignUp = async e => {
@@ -60,8 +42,6 @@ export default function Login(props) {
         })
         props.setLoginState(signup.data.logged_in)
         history.push('/weatherList')
-      //  setToken(token);
-
     }
     return (
         <div className="login-wrapper">
@@ -102,6 +82,7 @@ export default function Login(props) {
     )
 }
 
+// test login with and without this
 Login.propTypes = {
     setToken: PropTypes.func.isRequired
 }

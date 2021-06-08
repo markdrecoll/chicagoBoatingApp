@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
-
 function NavBar(props) {
     const history = useHistory()
 
@@ -22,7 +21,6 @@ function NavBar(props) {
         <div>
         {props.login ? (<button onClick= {logout}> Logout</button>) : <button onClick={handleSignUp}> Login/Singup</button>}
         </div>
-        
         </>
     )
 }

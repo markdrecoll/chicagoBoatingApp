@@ -8,7 +8,6 @@ router.post('/', function(req,res){
     Itinerary.create({text: req.body.data} ).then(function(newDUde) {
         res.json(newDUde)
     })
-    
 })
 
 module.exports = router;

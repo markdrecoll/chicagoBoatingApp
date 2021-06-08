@@ -1,32 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WeatherList from './pages/WeatherList';
 import React, { useEffect, useState } from 'react';
-import Login from './components/Login'
-import EmpApp from './components/EmpApp'
-import Harbor from './pages/Harbor'
-import Axios from 'axios'
-import Landing from './pages/Landing'
-import Navbar from './components/NavBar'
-
-// function setToken(userToken) {
-//     sessionStorage.setItem('token', JSON.stringify(userToken))
-// };
-
-// function getToken() {
-//     const tokenString = sessionStorage.getItem('token');
-//     const userToken = JSON.parse(tokenString);
-//     if (userToken) {
-//         return userToken.token
-//     } else {
-//         return null
-//     }
-// }
+import Login from './components/Login';
+import Harbor from './pages/Harbor';
+import Axios from 'axios';
+import Landing from './pages/Landing';
+import Navbar from './components/NavBar';
 
 function App() {
 
     const [loginState, setLoginState] = useState(false)
-
-   // const token = getToken()
 
     useEffect(() => {
 
@@ -36,13 +19,8 @@ function App() {
         })
     }, [])
 
-    // if (!token) {
-    //     return (
-    //     <Login setToken={setToken}/>
-    //     )
-    // }
-
     console.log('LOGIN STATE ', loginState)
+
     return (
         <Router>
             <div className="container">
@@ -70,7 +48,7 @@ function App() {
                         ) : (
                             <Switch>
                                 <Route exact path={"/"}>
-                                <Landing />
+                                    <Landing />
                                 </Route>
                                 <Route exact path={"/weatherlist"}>
                                     <WeatherList />

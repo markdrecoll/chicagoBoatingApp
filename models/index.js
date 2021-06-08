@@ -1,3 +1,4 @@
 module.exports = {
-    Employee: require("./employee")
+    Itinerary: require("./itinerary"),
+    User: require("./user")
 }

@@ -24,8 +24,6 @@ const CreateItinerary = (props) => {
         console.log('Save happened!', data)
         toggle()
     })
-
-
   }
 
   return (

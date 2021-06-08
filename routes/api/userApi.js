@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const empController = require("../../controllers/empController");
+// const empController = require("../../controllers/empController");
 const user = require("../../models/user");
-const { route } = require("./empApi");
+// const { route } = require("./empApi");
 
 router.post("/login", (req, res) => {
 
@@ -9,7 +9,6 @@ router.post("/login", (req, res) => {
         loginUser.comparePassword(req.body.password, function(err, isMatch){
             if(isMatch){
                 console.log('USER Logged in!!!', loginUser)
-                
 
                 req.session.save(() => {
                     req.session.user_id = loginUser._id;
@@ -38,7 +37,7 @@ router.post("/signup", (req, res) => {
 
 router.get('/loginCheck', (req, res) => {
    
-    console.log('whole ession', req.session)
+    console.log('whole session', req.session)
    
 
     res.json(req.session)

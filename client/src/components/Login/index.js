@@ -2,52 +2,46 @@ import React, { useState } from 'react';
 import "./style.css";
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom'
+import Axios from 'axios'
 
 async function loginUser(credentials) {
 
-   
-    return fetch("http://localhost:3001/api/user/login", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials)
-    })
-        .then(data => data.json())
+    console.log('credentails', credentials)
+    return Axios.post('/api/user/login', credentials)
 }
 
 async function signupUser(credentials) {
-    return fetch("http://localhost:3001/api/user/signup", {
-        method: "POST",
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials)
-    })
-        .then(data => data.json())
+
+        return  Axios.post('/api/user/signup', credentials)
 }
 
-export default function Login({ setToken }) {
+export default function Login(props) {
 
     const history = useHistory()
-
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
     const handleSubmit = async e => {
         e.preventDefault();
-        const token = await loginUser({
+     
+        const login = await loginUser({
             username,
             password
         })
-        setToken(token);
-        history.push('/WeatherList');
+
+        console.log('WHAT WE GET BACK FROM LOGIN!!!', login)
+        props.setLoginState(login.data.logged_in)
+        history.push('/weatherList')
     }
 
     const handleSignUp = async e => {
         e.preventDefault();
-        const token = await signupUser({
+        const signup = await signupUser({
             username,
             password
         })
-        setToken(token);
-
+        props.setLoginState(signup.data.logged_in)
+        history.push('/weatherList')
     }
     return (
         <div className="login-wrapper">
@@ -88,6 +82,7 @@ export default function Login({ setToken }) {
     )
 }
 
+// test login with and without this
 Login.propTypes = {
     setToken: PropTypes.func.isRequired
 }

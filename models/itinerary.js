@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const itinerarySchema = new Schema({
-    text: { type: String, required: true }   
+    // user ID
+    text: { type: String, required: true }
 });
 
 const Itinerary = mongoose.model("Itinerary", itinerarySchema);

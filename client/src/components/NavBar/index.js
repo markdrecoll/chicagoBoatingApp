@@ -18,12 +18,51 @@ function NavBar(props) {
 
   return (
     <>
-      <nav className="navbar bg-primary p-3">
-        {props.login ? (
-          <button onClick={logout}> Logout</button>
-        ) : (
-          <button onClick={handleSignUp}> Login/Singup</button>
-        )}
+      <nav className="navbar navbar-expand-lg bg-primary p-3">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          {props.login ? (
+            <li className="nav-item">
+              <a className="nav-link text-light" href="/" onClick={logout}>
+                {' '}
+                Logout
+              </a>
+            </li>
+          ) : (
+            <li className="nav-item">
+              <a
+                className="nav-link text-light"
+                href="/login"
+                onClick={handleSignUp}
+              >
+                {' '}
+                Login/Singup
+              </a>
+            </li>
+          )}
+          <li className="nav-item">
+            <a className="nav-link text-light" href="/">
+              Home
+            </a>
+          </li>
+          {props.login ? (
+            <li className="nav-item">
+              <a className="nav-link text-light" href="/weatherlist">
+                Weather List
+              </a>
+            </li>
+          ) : (
+            <li className="nav-item d-none">
+              <a className="nav-link text-light" href="/weatherlist">
+                Weather List
+              </a>
+            </li>
+          )}
+          <li className="nav-item">
+            <a className="nav-link text-light" href="/harbor">
+              Harbors
+            </a>
+          </li>
+        </ul>
       </nav>
     </>
   );

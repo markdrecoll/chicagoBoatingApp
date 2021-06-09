@@ -29,6 +29,12 @@ function WeatherList() {
     function kphToMph(speed){
         return (speed/1.609344).toFixed(1);
     }
+    function splitTime(time){
+        return time.split("T");
+    }
+    function splitDate(date){
+        return date.split("-");
+    }
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import harborData from "../../harborData.json"
+import harborData from "../harborData.json"
 
 function Harbor() {
 

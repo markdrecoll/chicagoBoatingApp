@@ -12,23 +12,22 @@ function App() {
     const [loginState, setLoginState] = useState(false)
 
     useEffect(() => {
-
+        // determine whether the user is logged in or not on page load
         Axios.get('/api/user/loginCheck', { withCredentials: true }).then(function (loginCheck) {
-            console.log('login check!!!', loginCheck)
             setLoginState(loginCheck.data.logged_in)
         })
     }, [])
-
-    console.log('LOGIN STATE ', loginState)
 
     return (
         <Router>
             <div className="container">
                 <div className="row">
-
                     <div className="col-12">
-                    <Navbar setLoginState={setLoginState} login={loginState} />
 
+                        <Navbar setLoginState={setLoginState} login={loginState} />
+                            
+                        {/* pages in the first switch above the colon are visible while not logged in */}
+                        {/* pages in the second switch below the colon are visible while logged in */}
                         {!loginState ? (
                             <Switch>
                                 <Route exact path={"/"}>
@@ -40,11 +39,7 @@ function App() {
                                 <Route exact path={"/harbor"}>
                                     <Harbor />
                                 </Route>
-
-
                             </Switch>
-
-
                         ) : (
                             <Switch>
                                 <Route exact path={"/"}>
@@ -58,9 +53,6 @@ function App() {
                                 </Route>
                             </Switch>
                         )}
-
-
-
                     </div>
                 </div>
             </div>

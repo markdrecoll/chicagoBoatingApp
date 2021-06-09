@@ -1,8 +1,9 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Axios from 'axios';
 
 function NavBar(props) {
+  console.log(props);
   const history = useHistory();
 
   const handleSignUp = () => {
@@ -22,45 +23,45 @@ function NavBar(props) {
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           {props.login ? (
             <li className="nav-item">
-              <a className="nav-link text-light" href="/" onClick={logout}>
+              <Link className="nav-link text-light" to="/" onClick={logout}>
                 {' '}
                 Logout
-              </a>
+              </Link>
             </li>
           ) : (
             <li className="nav-item">
-              <a
+              <Link
                 className="nav-link text-light"
-                href="/login"
+                to="/login"
                 onClick={handleSignUp}
               >
                 {' '}
                 Login/Singup
-              </a>
+              </Link>
             </li>
           )}
           <li className="nav-item">
-            <a className="nav-link text-light" href="/">
-              Home
-            </a>
+            <Link className="nav-link text-light" to="/">
+              Home Page
+            </Link>
           </li>
           {props.login ? (
             <li className="nav-item">
-              <a className="nav-link text-light" href="/weatherlist">
+              <Link className="nav-link text-light" to="/weatherlist">
                 Weather List
-              </a>
+              </Link>
             </li>
           ) : (
             <li className="nav-item d-none">
-              <a className="nav-link text-light" href="/weatherlist">
+              <Link className="nav-link text-light" to="/weatherlist">
                 Weather List
-              </a>
+              </Link>
             </li>
           )}
           <li className="nav-item">
-            <a className="nav-link text-light" href="/harbor">
+            <Link className="nav-link text-light" to="/harbor">
               Harbors
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

@@ -1,24 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import harborData from "../harborData.json"
+import React from 'react';
+import harborData from '../harborData.json';
 
 function Harbor() {
-
-    return (
-        <>
-        <h1>Harbor List Contact Info</h1>
-        {harborData.map(harbor=>(
-            <div key={harbor.id}>
-            <h2>{harbor.name}</h2>
-        <p1>Address:{harbor.address}</p1>
-        <p2>Phone:{harbor.phone}</p2>
-        <p3>Fax:{harbor.fax}</p3>
-        <p4>Email:{harbor.email}</p4>
+  return (
+    <div className="container row justify-content-center">
+      <h1 className="col-12">Harbor List Contact Info</h1>
+      {harborData.map((harbor) => (
+        <div className="card col-3 mx-2 my-2" key={harbor.id}>
+          <h2 className="card-header fluid">{harbor.name}</h2>
+          <ul>
+            <li>
+              <strong>Address:</strong> {harbor.address}
+            </li>
+            <li>
+              <strong>Phone:</strong> {harbor.phone}
+            </li>
+            <li>
+              <strong>Fax:</strong> {harbor.fax}
+            </li>
+            <li>
+              <strong>Email:</strong> {harbor.email}
+            </li>
+          </ul>
         </div>
-        ))}
-
-        
-        </>
-    )
+      ))}
+    </div>
+  );
 }
 
 export default Harbor;

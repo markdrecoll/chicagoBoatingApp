@@ -33,9 +33,7 @@ function WeatherList() {
         return (measurement*3.28).toFixed(1);
     }
     function splitTime(time){
-        return time.split("T");
-    }
-    function splitDate(date){
+        let date = time.split("T")[0];
         return date.split("-");
     }
 
@@ -46,9 +44,9 @@ function WeatherList() {
             <div className="card" style={{"width": "18rem"}}>
             <div className="card-body">
               <h5 className="card-title">
-                  {splitDate(splitTime(weatherItem.time)[0])[1]}/
-                  {splitDate(splitTime(weatherItem.time)[0])[2]}/
-                  {splitDate(splitTime(weatherItem.time)[0])[0]}
+                  {splitTime(weatherItem.time)[1]}/
+                  {splitTime(weatherItem.time)[2]}/
+                  {splitTime(weatherItem.time)[0]}
               </h5>
               <p className="card-text">Wave Height: {metersToFeet(weatherItem.waveHeight.meteo)}m Direction: {weatherItem.waveDirection.meteo}°</p>
               <p className="card-text">Water Temperature: {celciusToFahrenheit(weatherItem.waterTemperature.noaa)}° F</p>

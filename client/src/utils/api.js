@@ -5,6 +5,12 @@ export default {
         return axios.get("/api/weather");
     },
     saveActivity: function(activity) {
+        return axios.post("/api/activity", {data:activity});
+    },
+    getRegularWeather : function(){
+        return axios.get("");
+    }
+
         return axios.post("/api/activity", {date: activity.date, text: activity.text});
     },
 
@@ -16,7 +22,6 @@ export default {
     }
 
 
-    // getRegularWeather : function(){
-    //     return axios.get("");
-    // }
+   
+
 }

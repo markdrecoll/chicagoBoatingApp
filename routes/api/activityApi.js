@@ -4,16 +4,23 @@ const Itinerary = require("../../models/itinerary");
 var mongoose = require('mongoose');
 
 router.post('/', function (req, res) {
-    Itinerary.create({ text: req.body.data, user: req.session.user_id }).then(function (newItin) {
+    Itinerary.create({ text: req.body.text, user: req.session.user_id, date:req.body.date }).then(function (newItin) {
         res.json(newItin)
     })
 })
-
 
 router.get('/myItinerary', function (req, res) {
     Itinerary.find({
         'user': mongoose.Types.ObjectId(req.session.user_id)
     }, function (err, docs) {
+        console.log(docs);
+        res.json(docs);
+    });
+})
+
+router.get('/allItineraries', function (req, res) {
+    console.log('hitting getall Itin on backend ')
+    Itinerary.find({}, function (err, docs) {
         console.log(docs);
         res.json(docs);
     });

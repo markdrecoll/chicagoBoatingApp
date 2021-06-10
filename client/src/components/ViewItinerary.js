@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
-import API from '../utils/api'
 
 const ViewItinerary = (props) => {
+
     let iData = props.itineraryData;
-    //the code to filder iData here
-    // let activity = //do the filtering
+    let activity = iData.filter(data => props.date === data.date);
 
     const {
-        buttonLabel,
+    //     buttonLabel,
         className,
-        date,
-        text
+    //     date,
+    //     text
       } = props;
 
       const [modal, setModal] = useState(false);
@@ -22,12 +21,14 @@ const ViewItinerary = (props) => {
       <Button color="secondary" className="btn-sm" onClick={toggle}>View Itinerary</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}></ModalHeader>
-        <ModalBody>
-            {/* {activity} */}
-        </ModalBody>
+            {activity.map(data => (
+                <ModalBody>
+                    {data.date}<br />
+                    {data.text}
+                </ModalBody>
+            ))}
         <ModalFooter>
-          <Button color="secondary" className="btn-sm" onClick={toggle}>Cancel</Button>
-          <Button color="primary" className="btn-sm" onClick={toggle}>Submit</Button>{' '}
+          <Button color="secondary" className="btn-sm" onClick={toggle}>Close</Button>
         </ModalFooter>
       </Modal>
     </div>

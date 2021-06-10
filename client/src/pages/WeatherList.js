@@ -43,6 +43,11 @@ function WeatherList() {
         let date = time.split("T")[0];
         return date.split("-");
     }
+    function getTheDate(apiDate){
+        let date = apiDate.split("T")[0];
+        let newDate = date.split("-");
+        return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
+    }
 
     return (
         <>
@@ -52,11 +57,7 @@ function WeatherList() {
                     <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }}>
                         {console.log("type of",typeof weatherItem.waveHeight)}
                         <div className="card-body">
-                            <h4 className="card-title card-header mb-3 text-center">
-                                {splitTime(weatherItem.time)[1]}/
-                                {splitTime(weatherItem.time)[2]}/
-                                {splitTime(weatherItem.time)[0]}
-                            </h4>
+                            <h4 className="card-title card-header mb-3 text-center">{getTheDate(weatherItem.time)}</h4>
                             <h6 className="card-subtitle">Wave Height</h6>
                             <p className="card-text">{metersToFeet(weatherItem.waveHeight.meteo)}ft {(weatherItem.waveDirection.meteo).toFixed(0)}°</p>
                             <h6 className="card-subtitle">Water Temperature</h6>
@@ -64,7 +65,7 @@ function WeatherList() {
                             <h6 className="card-subtitle">Wind Speed</h6>
                             <p className="card-text">{kphToMph(weatherItem.windSpeed.noaa)} Mph {(weatherItem.windDirection.noaa).toFixed(0)}°</p>
                             <CreateItinerary weatherDataStuff={weatherItem} />
-                            <ViewItinerary itineraryData={itineraryData} />
+                            <ViewItinerary itineraryData={itineraryData} date={getTheDate(weatherItem.time)} />
                         </div>
                     </div>
                 ))}

@@ -38,27 +38,28 @@ function WeatherList() {
     return (
         <>
             <h1>Weather List</h1>
-            {weatherList.map(weatherItem => (
-                
-                <div className="card" style={{ "width": "18rem" }}>
-                    {console.log("type of",typeof weatherItem.waveHeight)}
-                    <div className="card-body">
-                        <h4 className="card-title">
-                            {splitTime(weatherItem.time)[1]}/
-                            {splitTime(weatherItem.time)[2]}/
-                            {splitTime(weatherItem.time)[0]}
-                        </h4>
-                        <h6 className="card-subtitle">Wave Height</h6>
-                        <p className="card-text">{metersToFeet(weatherItem.waveHeight.meteo)}ft {(weatherItem.waveDirection.meteo).toFixed(0)}°</p>
-                        <h6 className="card-subtitle">Water Temperature</h6>
-                        <p className="card-text">{celciusToFahrenheit(weatherItem.waterTemperature.noaa)}° F</p>
-                        <h6 className="card-subtitle">Wind Speed</h6>
-                        <p className="card-text">{kphToMph(weatherItem.windSpeed.noaa)} Mph {(weatherItem.windDirection.noaa).toFixed(0)}°</p>
-                        <CreateItinerary weatherDataStuff={weatherItem} />
-                        <a href="#" className="btn btn-secondary btn-sm">View Itinerary</a>
+            <div className="container row justify-content-center">
+                {weatherList.map(weatherItem => (
+                    <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }}>
+                        {console.log("type of",typeof weatherItem.waveHeight)}
+                        <div className="card-body">
+                            <h4 className="card-title card-header mb-3 text-center">
+                                {splitTime(weatherItem.time)[1]}/
+                                {splitTime(weatherItem.time)[2]}/
+                                {splitTime(weatherItem.time)[0]}
+                            </h4>
+                            <h6 className="card-subtitle">Wave Height</h6>
+                            <p className="card-text">{metersToFeet(weatherItem.waveHeight.meteo)}ft {(weatherItem.waveDirection.meteo).toFixed(0)}°</p>
+                            <h6 className="card-subtitle">Water Temperature</h6>
+                            <p className="card-text">{celciusToFahrenheit(weatherItem.waterTemperature.noaa)}° F</p>
+                            <h6 className="card-subtitle">Wind Speed</h6>
+                            <p className="card-text">{kphToMph(weatherItem.windSpeed.noaa)} Mph {(weatherItem.windDirection.noaa).toFixed(0)}°</p>
+                            <CreateItinerary weatherDataStuff={weatherItem} />
+                            <a href="#" className="btn btn-secondary btn-sm">View Itinerary</a>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 }

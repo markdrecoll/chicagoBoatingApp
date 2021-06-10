@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import CreateItinerary from '../components/CreateItinerary';
+import ViewItinerary from '../components/ViewItinerary';
 
 function WeatherList() {
 
     const [weatherList, setWeatherList] = useState([]);
+    const [itineraryData, setItineraryData] = useState([]);
 
     useEffect(() => {
         API.getAllWeather()
@@ -19,6 +21,13 @@ function WeatherList() {
                 }
                 setWeatherList(goodWeather);
             })
+
+        API.getItinery().then((data)=>{
+            console.log(data.data)
+            setItineraryData(data.data);
+        })
+        
+
     }, []);
 
     function celciusToFahrenheit(temperature) {
@@ -55,7 +64,7 @@ function WeatherList() {
                             <h6 className="card-subtitle">Wind Speed</h6>
                             <p className="card-text">{kphToMph(weatherItem.windSpeed.noaa)} Mph {(weatherItem.windDirection.noaa).toFixed(0)}°</p>
                             <CreateItinerary weatherDataStuff={weatherItem} />
-                            <a href="#" className="btn btn-secondary btn-sm">View Itinerary</a>
+                            <ViewItinerary itineraryData={itineraryData} />
                         </div>
                     </div>
                 ))}

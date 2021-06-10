@@ -21,7 +21,7 @@ function NavBar(props) {
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="container-fluid">
         <Link to="/" className="nav-link text-light">
-          <h3>Chicago Boating App | Boats N Hoes</h3>
+          <h3>Chicago Boating App</h3>
         </Link>
         <button
           className="navbar-toggler"

@@ -6,8 +6,8 @@ export default {
     },
     saveActivity: function(activity) {
         return axios.post("/api/activity", {data:activity});
+    },
+    getRegularWeather : function(){
+        return axios.get("");
     }
-    // getRegularWeather : function(){
-    //     return axios.get("");
-    // }
 }

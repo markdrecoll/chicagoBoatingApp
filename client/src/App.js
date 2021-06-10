@@ -14,12 +14,9 @@ function App() {
     Axios.get('/api/user/loginCheck', { withCredentials: true }).then(function (
       loginCheck
     ) {
-      console.log('login check!!!', loginCheck);
       setLoginState(loginCheck.data.logged_in);
     });
   }, []);
-
-  console.log('LOGIN STATE ', loginState);
 
   return (
     <Router>

@@ -10,7 +10,7 @@ router.post("/login", (req, res) => {
                     req.session.user_id = loginUser._id;
                     req.session.logged_in = true;
                     req.session.username = loginUser.username
-                    res.json({ user: loginUser, message: 'You are now logged in!', logged_in: true });
+                    res.json({ user: loginUser, message: 'You are now logged in.', logged_in: true });
                 });
             }
         });
@@ -24,7 +24,7 @@ router.post("/signup", (req, res) => {
             req.session.user_id = newUser._id;
             req.session.logged_in = true;
             req.session.username = newUser.username
-            res.json({ user: newUser, message: 'You are now logged in!', logged_in: true });
+            res.json({ user: newUser, message: 'You are now logged in.', logged_in: true });
         });
     })
 })

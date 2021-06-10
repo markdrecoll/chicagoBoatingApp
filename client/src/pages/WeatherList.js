@@ -6,8 +6,6 @@ function WeatherList() {
 
     const [weatherList, setWeatherList] = useState([]);
 
-    // const [waveHeight, setWaveHeight] = useState({});
-
     useEffect(() => {
         API.getAllWeather()
 
@@ -15,7 +13,7 @@ function WeatherList() {
 
                 var goodWeather = []
 
-                for (let i = 12; i < weatherData.data.hours.length; i += 24) {
+                for (let i = 12; i < weatherData.data.hours.length-72; i += 24) {
                     console.log('Looping through weather data.', weatherData.data.hours[i]);
                     goodWeather.push(weatherData.data.hours[i])
                 }
@@ -41,7 +39,9 @@ function WeatherList() {
         <>
             <h1>Weather List</h1>
             {weatherList.map(weatherItem => (
+                
                 <div className="card" style={{ "width": "18rem" }}>
+                    {console.log("type of",typeof weatherItem.waveHeight)}
                     <div className="card-body">
                         <h4 className="card-title">
                             {splitTime(weatherItem.time)[1]}/

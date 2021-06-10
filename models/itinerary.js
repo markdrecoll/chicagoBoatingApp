@@ -5,6 +5,7 @@ const itinerarySchema = new Schema({
     user: { type: Schema.ObjectId},
     date: { type: String},
     harbor: {type: String},
+    date: { type: String },
     text: { type: String, required: true }
 });
 

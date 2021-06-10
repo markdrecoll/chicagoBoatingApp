@@ -11,6 +11,7 @@ const CreateItinerary = (props) => {
   const [modal, setModal] = useState(false);
   const [backdrop, setBackdrop] = useState(true);
   const toggle = () => setModal(!modal);
+ 
 
   const [userActivityState, setUserActivityState] = useState("");
 
@@ -19,10 +20,15 @@ const CreateItinerary = (props) => {
   }
 
   const handleSave = () => {
-    API.saveActivity(userActivityState).then(function(data) {
+    let activity = {
+      date: formattedDate,
+      text: userActivityState
+    }
+    API.saveActivity(activity).then(function(data) {
         console.log('Save happened!', data)
         toggle()
     })
+    // API.saveActivity(activity);
   }
 
   function splitTime(time) {
@@ -30,16 +36,16 @@ const CreateItinerary = (props) => {
     return date.split("-");
   }
 
+  let formattedDate = splitTime(props.weatherDataStuff.time)[1] + "/" +
+  splitTime(props.weatherDataStuff.time)[2] + "/" +
+  splitTime(props.weatherDataStuff.time)[0];
+
   return (
     <div>
       {/* modal for taking in a user itinerary */}
       <Button color="primary" className="btn-sm" onClick={toggle}>Create Itinerary</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>{
-          splitTime(props.weatherDataStuff.time)[1] + "/" +
-          splitTime(props.weatherDataStuff.time)[2] + "/" +
-          splitTime(props.weatherDataStuff.time)[0]
-        }</ModalHeader>
+        <ModalHeader toggle={toggle}>{formattedDate}</ModalHeader>
         <ModalBody>
 
             <Form inline onSubmit={(e) => e.preventDefault()}>

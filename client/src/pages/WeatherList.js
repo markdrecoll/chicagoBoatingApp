@@ -12,22 +12,17 @@ function WeatherList() {
         API.getAllWeather()
 
             .then(weatherData => {
-
                 var goodWeather = []
 
-                for (let i = 12; i < weatherData.data.hours.length-72; i += 24) {
-                    console.log('Looping through weather data.', weatherData.data.hours[i]);
+                for (let i = 12; i < weatherData.data.hours.length - 72; i += 24) {
                     goodWeather.push(weatherData.data.hours[i])
                 }
                 setWeatherList(goodWeather);
             })
 
-        API.getItinery().then((data)=>{
-            console.log(data.data)
+        API.getItinery().then((data) => {
             setItineraryData(data.data);
         })
-        
-
     }, []);
 
     function celciusToFahrenheit(temperature) {
@@ -39,11 +34,7 @@ function WeatherList() {
     function metersToFeet(measurement) {
         return (measurement * 3.28).toFixed(1);
     }
-    function splitTime(time) {
-        let date = time.split("T")[0];
-        return date.split("-");
-    }
-    function getTheDate(apiDate){
+    function getTheDate(apiDate) {
         let date = apiDate.split("T")[0];
         let newDate = date.split("-");
         return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
@@ -55,7 +46,6 @@ function WeatherList() {
             <div className="container row justify-content-center">
                 {weatherList.map(weatherItem => (
                     <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }}>
-                        {console.log("type of",typeof weatherItem.waveHeight)}
                         <div className="card-body">
                             <h4 className="card-title card-header mb-3 text-center">{getTheDate(weatherItem.time)}</h4>
                             <h6 className="card-subtitle">Wave Height</h6>

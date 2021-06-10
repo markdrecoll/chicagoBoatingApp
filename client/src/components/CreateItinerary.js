@@ -9,7 +9,6 @@ const CreateItinerary = (props) => {
   } = props;
 
   const [modal, setModal] = useState(false);
-  const [backdrop, setBackdrop] = useState(true);
   const toggle = () => setModal(!modal);
  
 
@@ -25,20 +24,17 @@ const CreateItinerary = (props) => {
       text: userActivityState
     }
     API.saveActivity(activity).then(function(data) {
-        console.log('Save happened!', data)
         toggle()
     })
-    // API.saveActivity(activity);
   }
 
-  function splitTime(time) {
-    let date = time.split("T")[0];
-    return date.split("-");
-  }
+  function getTheDate(apiDate){
+    let date = apiDate.split("T")[0];
+    let newDate = date.split("-");
+    return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
+}
 
-  let formattedDate = splitTime(props.weatherDataStuff.time)[1] + "/" +
-  splitTime(props.weatherDataStuff.time)[2] + "/" +
-  splitTime(props.weatherDataStuff.time)[0];
+  let formattedDate = getTheDate(props.weatherDataStuff.time)
 
   return (
     <div>

@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const weatherApi = require("./weatherApi")
-const regularWeatherApi = require("./regularweatherApi")
+const regularWeatherApi = require("./regularWeatherApi")
 const activityApi = require("./activityApi")
 const userApi = require("./userApi")
 

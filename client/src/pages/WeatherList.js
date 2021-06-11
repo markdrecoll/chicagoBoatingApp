@@ -41,11 +41,12 @@ function WeatherList() {
     }
 
     return (
+        // "card col-3 mx-2 my-2"
         <>
             <h1>Weather List</h1>
             <div className="container row justify-content-center">
                 {weatherList.map(weatherItem => (
-                    <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }}>
+                    <div className={weatherItem.waveHeight.meteo > 2 ? ("card col-3 mx-2 my-2 bg-danger") : ("card col-3 mx-2 my-2")} style={{ "width": "18rem" }}>
                         <div className="card-body">
                             <h4 className="card-title card-header mb-3 text-center">{getTheDate(weatherItem.time)}</h4>
                             <h6 className="card-subtitle">Wave Height</h6>

@@ -19,7 +19,6 @@ router.get('/myItinerary', function (req, res) {
 })
 
 router.get('/allItineraries', function (req, res) {
-    console.log('hitting getall Itin on backend ')
     Itinerary.find({}, function (err, docs) {
         console.log(docs);
         res.json(docs);

@@ -3,6 +3,7 @@ import WeatherList from './pages/WeatherList';
 import React, { useEffect, useState } from 'react';
 import Login from './components/Login';
 import Harbor from './pages/Harbor';
+import Attraction from './pages/Attraction';
 import Axios from 'axios';
 import Landing from './pages/Landing';
 import Navbar from './components/NavBar';
@@ -36,6 +37,9 @@ function App() {
                 <Route exact path={'/harbor'}>
                   <Harbor />
                 </Route>
+                <Route exact path={'/attraction'}>
+                  <Attraction />
+                </Route>
               </Switch>
             ) : (
               <Switch>
@@ -47,6 +51,9 @@ function App() {
                 </Route>
                 <Route exact path={'/harbor'}>
                   <Harbor />
+                </Route>
+                <Route exact path={'/attraction'}>
+                  <Attraction />
                 </Route>
               </Switch>
             )}

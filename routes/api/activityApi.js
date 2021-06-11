@@ -20,7 +20,6 @@ router.get('/myItinerary', function (req, res) {
 
 router.get('/allItineraries', function (req, res) {
     Itinerary.find({}, function (err, docs) {
-        console.log(docs);
         res.json(docs);
     });
 })

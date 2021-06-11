@@ -78,6 +78,11 @@ function NavBar(props) {
                 Harbors
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link text-light" to="/attraction">
+                Attractions
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

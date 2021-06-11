@@ -18,6 +18,11 @@ export default {
         {
             harbor: harbor,
         })
-
-    }
+    },
+    setAttractionForUser: function(attraction) {
+        return axios.put("/api/attraction", 
+        {
+            attraction: attraction,
+        })
+    },
 }

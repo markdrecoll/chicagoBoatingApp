@@ -5,7 +5,7 @@ import API from "../utils/api";
 function Harbor() {
   return (
     <div className="container row justify-content-center">
-      <h1 className="col-12">Harbor List Contact Info</h1>
+      <h1 className="col-12">Harbor Information</h1>
       <p>Click on a harbor to set that as your designated harbor.</p>
       {harborData.map((harbor) => (
         // add on click ability to make api call to set default harbor for the user

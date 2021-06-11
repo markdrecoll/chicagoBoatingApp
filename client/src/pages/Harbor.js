@@ -1,12 +1,19 @@
 import React from 'react';
 import harborData from '../harborData.json';
 import API from "../utils/api";
+import GoogleMap from "../components/GoogleMap"
 
 function Harbor() {
   return (
     <div className="container row justify-content-center">
       <h1 className="col-12">Harbor Information</h1>
       <p>Click on a harbor to set that as your designated harbor.</p>
+
+
+      <GoogleMap />
+
+
+
       {harborData.map((harbor) => (
         // add on click ability to make api call to set default harbor for the user
         <div className="card col-lg-3 mx-2 my-2" key={harbor.id} onClick={()=> API.setHarborForUser(harbor.name)}>
@@ -24,6 +31,10 @@ function Harbor() {
             <li>
               <strong>Email:</strong> {harbor.email}
             </li>
+            {/* MAKE THIS PASS IN LAT AND LONG TO GOOGLE MAPS
+            <li>
+              <button data-address={harbor.address}>Map</button>
+            </li> */}
           </ul>
         </div>
       ))}

@@ -9,7 +9,7 @@ function Harbor() {
       <p>Click on a harbor to set that as your designated harbor.</p>
       {harborData.map((harbor) => (
         // add on click ability to make api call to set default harbor for the user
-        <div className="card col-3 mx-2 my-2" key={harbor.id} onClick={()=> API.setHarborForUser(harbor.name)}>
+        <div className="card col-lg-3 mx-2 my-2" key={harbor.id} onClick={()=> API.setHarborForUser(harbor.name)}>
           <h2 className="card-header fluid">{harbor.name}</h2>
           <ul>
             <li>

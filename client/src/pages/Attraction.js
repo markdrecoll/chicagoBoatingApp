@@ -9,11 +9,14 @@ function Attraction() {
       <p>Click on an attraction to set that as your designated attraction.</p>
       {attractionData.map((attraction) => (
         // add on click ability to make api call to set default attraction for the user
-        <div className="card col-lg-3 mx-2 my-2" key={attraction.id} onClick={()=> API.setAttractionForUser(attraction.name)}>
+        <div className="card col-lg-3 mx-2 my-2" style={{"width" : "18rem"}} key={attraction.id} onClick={()=> API.setAttractionForUser(attraction.name)}>
           <h2 className="card-header fluid">{attraction.name}</h2>
           <ul>
             <li>
               <strong>Description:</strong> {attraction.description}
+            </li>
+            <li>
+              <img src={attraction.image_link} alt={attraction.name} />
             </li>
           </ul>
         </div>

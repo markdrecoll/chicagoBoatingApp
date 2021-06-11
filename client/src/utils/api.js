@@ -11,7 +11,13 @@ export default {
         return axios.get("");
     },
     getItinery: function(){
-        console.log('hitting api on front end')
         return axios.get("/api/activity/allItineraries");
+    },
+    setHarborForUser: function(harbor) {
+        return axios.put("/api/harbor", 
+        {
+            harbor: harbor,
+        })
+
     }
 }

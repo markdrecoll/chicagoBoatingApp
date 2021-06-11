@@ -5,10 +5,12 @@ import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
 async function loginUser(credentials) {
+
     return Axios.post('/api/user/login', credentials)
 }
 
 async function signupUser(credentials) {
+
         return  Axios.post('/api/user/signup', credentials)
 }
 

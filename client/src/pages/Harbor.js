@@ -6,7 +6,7 @@ import GoogleMap from "../components/GoogleMap"
 function Harbor() {
   return (
     <div className="container row justify-content-center">
-      <h1 className="col-12">Harbor List Contact Info</h1>
+      <h1 className="col-12">Harbor Information</h1>
       <p>Click on a harbor to set that as your designated harbor.</p>
 
 

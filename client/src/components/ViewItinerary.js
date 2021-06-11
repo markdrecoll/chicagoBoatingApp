@@ -7,32 +7,32 @@ const ViewItinerary = (props) => {
     let activity = iData.filter(data => props.date === data.date);
 
     const {
-    //     buttonLabel,
+        //     buttonLabel,
         className,
-    //     date,
-    //     text
-      } = props;
+        //     date,
+        //     text
+    } = props;
 
-      const [modal, setModal] = useState(false);
-      const toggle = () => setModal(!modal);
+    const [modal, setModal] = useState(false);
+    const toggle = () => setModal(!modal);
 
-  return (
-    <div>
-      <Button color="secondary" className="btn-sm" onClick={toggle}>View Itinerary</Button>
-      <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}></ModalHeader>
-            {activity.map(data => (
-                <ModalBody>
-                    {data.date}<br />
-                    {data.text}
-                </ModalBody>
-            ))}
-        <ModalFooter>
-          <Button color="secondary" className="btn-sm" onClick={toggle}>Close</Button>
-        </ModalFooter>
-      </Modal>
-    </div>
-  );
+    return (
+        <div>
+            <Button color="secondary" className="btn-sm" onClick={toggle}>View Itinerary</Button>
+            <Modal isOpen={modal} toggle={toggle} className={className}>
+                <ModalHeader toggle={toggle}></ModalHeader>
+                {activity.map(data => (
+                    <ModalBody>
+                        {data.date}<br />
+                        {data.text}
+                    </ModalBody>
+                ))}
+                <ModalFooter>
+                    <Button color="secondary" className="btn-sm" onClick={toggle}>Close</Button>
+                </ModalFooter>
+            </Modal>
+        </div>
+    );
 }
 
 export default ViewItinerary;

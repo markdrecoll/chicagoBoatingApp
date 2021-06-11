@@ -3,7 +3,6 @@ import { useHistory, Link } from 'react-router-dom';
 import Axios from 'axios';
 
 function NavBar(props) {
-  console.log(props);
   const history = useHistory();
 
   const handleSignUp = () => {

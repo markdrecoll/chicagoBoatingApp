@@ -5,13 +5,10 @@ import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
 
 async function loginUser(credentials) {
-
-    console.log('credentails', credentials)
     return Axios.post('/api/user/login', credentials)
 }
 
 async function signupUser(credentials) {
-
         return  Axios.post('/api/user/signup', credentials)
 }
 
@@ -29,7 +26,6 @@ export default function Login(props) {
             password
         })
 
-        console.log('WHAT WE GET BACK FROM LOGIN!!!', login)
         props.setLoginState(login.data.logged_in)
         history.push('/weatherList')
     }

@@ -19,6 +19,10 @@ export default {
             harbor: harbor,
         })
     },
+    getHarborForUser: function(harbor) {
+        console.log(harbor)
+        return axios.get("/api/harbor", harbor)
+    },
     setAttractionForUser: function(attraction) {
         return axios.put("/api/attraction", 
         {

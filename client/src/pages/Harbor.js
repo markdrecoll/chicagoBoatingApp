@@ -6,15 +6,23 @@ import GoogleMap from "../components/GoogleMap"
 
 function Harbor(props) {
     const [favHarbor, setFavHarbor]=useState('')
-console.log('this mah props', props)
     useEffect(() => {
-        handleHarborSave();
+        getHarbor()
       }, []);
 const handleHarborSave=(harborName)=>{
     API.setHarborForUser(harborName).then((data)=>{
         console.log(data)
         setFavHarbor(data.data.harbor)
     })
+}
+
+const getHarbor =()=>{
+    API.getHarborForUser()
+            .then((res)=>{
+                console.log(res.data)
+                setFavHarbor(res.data)
+            })
+            .catch((err)=>console.log('no favorite'))
 }
   return (
     <div className="container row justify-content-center">

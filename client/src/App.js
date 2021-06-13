@@ -11,7 +11,6 @@ import Footer from './components/Footer'
 
 function App() {
   const [loginState, setLoginState] = useState(false);
-console.log('app.js login state', loginState)
   useEffect(() => {
     Axios.get('/api/user/loginCheck', { withCredentials: true }).then(function (
       loginCheck

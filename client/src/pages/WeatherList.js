@@ -51,7 +51,7 @@ function WeatherList() {
                 </div>
             </div>
             
-            <div className="container rounded row justify-content-center border py-5">
+            <div className="container rounded row justify-content-center border py-5 mb-3">
                 <h2 className="mb-5">7 Day Marine Forecast</h2>
                 {weatherList.map(weatherItem => (
                     <div className="card col-lg-3 mx-3 my-2"  key={weatherItem.time}>

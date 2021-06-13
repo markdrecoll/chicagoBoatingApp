@@ -7,6 +7,7 @@ import Attraction from './pages/Attraction';
 import Axios from 'axios';
 import Landing from './pages/Landing';
 import Navbar from './components/NavBar';
+import Footer from './components/Footer'
 
 function App() {
   const [loginState, setLoginState] = useState(false);
@@ -61,6 +62,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer/>
     </Router>
   );
 }

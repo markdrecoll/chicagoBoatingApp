@@ -42,7 +42,8 @@ export default function Login(props) {
         history.push('/weatherList')
     }
     return (
-        <div className="login-wrapper">
+        <div className="  py-5 mt-5">
+            <div className="container d-flex justify-content-center text-end flex-column bg-primary text-light">
             <h1>Please Log In</h1>
 
             <form onSubmit={handleSubmit}>
@@ -60,6 +61,8 @@ export default function Login(props) {
 
             </form>
 
+            </div>
+            <div className="container border border-primary">
             <h1>Please Sign up </h1>
 
             <form onSubmit={handleSignUp}>
@@ -76,6 +79,7 @@ export default function Login(props) {
                 </div>
 
             </form>
+            </div>
         </div>
     )
 }

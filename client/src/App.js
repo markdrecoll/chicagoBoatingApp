@@ -21,10 +21,11 @@ function App() {
 
   return (
     <Router>
+        <Navbar setLoginState={setLoginState} login={loginState} />
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <Navbar setLoginState={setLoginState} login={loginState} />
+            
 
             {!loginState ? (
               <Switch>

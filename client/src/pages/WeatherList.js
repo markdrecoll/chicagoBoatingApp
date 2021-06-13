@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import CreateItinerary from '../components/CreateItinerary';
 import ViewItinerary from '../components/ViewItinerary';
-// import image from "./assets/images/Chicago-Sunrise.jpeg"
-
 
 function WeatherList() {
 

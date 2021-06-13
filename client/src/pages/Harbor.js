@@ -28,12 +28,11 @@ const getHarbor =()=>{
     <div className="container row justify-content-center">
       <h1 className="col-12 bg-light p-5">Harbor Information</h1>
       
-
-
       <GoogleMap />
+
         <div className="bg-light p-5">
-        <h2>Choose your favorite Harbor</h2>
-      <h5>Save a Harbor as your designated harbor.</h5>
+        <h2>Choose your Harbor</h2>
+        <h5>Save a Harbor as your designated harbor.</h5>
         </div>
         
       {harborData.map((harbor) => (

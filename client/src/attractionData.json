@@ -10,5 +10,23 @@
       "name": "Horshoe Casino Hammond",
       "description": "Horseshoe Casino Hammond, located in Hammond, Indiana, is a 400,000-square-foot property containing gaming, entertainment, restaurants, bars, and lounges.",
       "image_link": "../assets/images/hammondcasino.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Pizzeria Portofino",
+      "description": "Pizzeria Portofino is a sun-drenched casual restaurant located directly on the Chicago riverfront offering hand-stretched pizzas, coastal wines, an expansive patio and breezy decor that will instantly transport you to the Italian Riviera.",
+      "image_link": "../assets/images/portofino.PNG"
+    },
+    {
+      "id": "4",
+      "name": "City Winery",
+      "description": "City Winery was founded in New York City in 2008 by Michael Dorf to deliver a unique combined culinary and cultural experience to urban wine enthusiasts. Each City Winery offers intimate concerts, food and wine seminars, private event spaces, upscale dining, and a fully functioning winery. Today, City Winery has physical locations in New York, Chicago, Nashville, Atlanta, Boston, Washington DC, Philadelphia, and Hudson Valley. There are also four other concepts run by the company: City Vineyard at Pier 26, City Winery at Rockefeller Center, City Winery Chicago at the Riverwalk, and City Winery Greenway in Boston. City winery has boat docking available along the Chicago river.",
+      "image_link": "../assets/images/citywinery_sceenshot.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Island Party Hut",
+      "description": "Island party hut describes itself as an island paradise on the Chicago Riverwalk that is filled with decor from Polynesia and the Caribbean, topped off with the sounds of island music. It is a tikibar right on the river with ample boat parking.",
+      "image_link": "../assets/images/islandpartyhut_screenshot.PNG"
     }
 ]

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import API from '../utils/api';
 import CreateItinerary from '../components/CreateItinerary';
 import ViewItinerary from '../components/ViewItinerary';
+// import image from "./assets/images/Chicago-Sunrise.jpeg"
+
 
 function WeatherList() {
 
@@ -41,11 +43,16 @@ function WeatherList() {
     }
 
     return (
-        <>
-            <h1>Weather List</h1>
+        <div className="justify-content-center">
+            <div  className="card rounded p-5 my-4 bg-img justify-content-center" style={{backgroundImage: 'url("./assets/images/Chicago-Sunrise.jpeg")', backgroundSize:'cover', height:'500px', backgroundPosition: 'center', color:'white'}}>
+                <h1>The 10 Day Marine Forcast</h1>
+                <div className="container">
+                    <h4>Plan your next boating extravaganza all based <br/> on the the marine conditions displayed below</h4>
+                </div>
+            </div>
             <div className="container row justify-content-center">
                 {weatherList.map(weatherItem => (
-                    <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }}>
+                    <div className="card col-3 mx-2 my-2" style={{ "width": "18rem" }} key={weatherItem.time}>
                         <div className="card-body row">
                             <h4 className="card-title card-header mb-3 text-center">{getTheDate(weatherItem.time)}</h4>
                             <h6 className="card-subtitle">Wave Height</h6>
@@ -65,7 +72,7 @@ function WeatherList() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

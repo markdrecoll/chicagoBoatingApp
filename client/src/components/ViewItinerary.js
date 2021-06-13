@@ -22,7 +22,7 @@ const ViewItinerary = (props) => {
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}></ModalHeader>
                 {activity.map(data => (
-                    <ModalBody>
+                    <ModalBody key={data.date}>
                         {data.date}<br />
                         {data.text}
                     </ModalBody>

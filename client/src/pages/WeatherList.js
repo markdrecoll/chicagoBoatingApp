@@ -71,10 +71,10 @@ console.log('all data',itineraryData)
                                     )}
                                 {itineraryData.map((itin)=>(
                                     itin.date === getTheDate(weatherItem.time)?(
-                                        <div className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>,
-                                        <div className="col-6"><ViewItinerary  itineraryData={itineraryData} date={getTheDate(weatherItem.time)} /></div>
+                                        <div  className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>,
+                                        <div key={itin.text} className="col-6"><ViewItinerary  itineraryData={itineraryData} date={getTheDate(weatherItem.time)} /></div>
                                     ):(
-                                        <div className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>
+                                        <div key={itin._id} className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>
                                     )
                                 ))}
                                 

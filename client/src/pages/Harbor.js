@@ -16,7 +16,7 @@ function Harbor() {
 
       {harborData.map((harbor) => (
         // add on click ability to make api call to set default harbor for the user
-        <div className="card col-lg-3 mx-2 my-2" key={harbor.id} onClick={()=> API.setHarborForUser(harbor.name)}>
+        <div className="card col-lg-3 mx-2 my-2" key={harbor.id} >
           <h2 className="card-header fluid">{harbor.name}</h2>
           <ul>
             <li>
@@ -36,6 +36,7 @@ function Harbor() {
               <button data-address={harbor.address}>Map</button>
             </li> */}
           </ul>
+          <button className="btn btn-primary col-md-6 mb-3" onClick={()=> API.setHarborForUser(harbor.name)}>Save as Favorite</button>
         </div>
       ))}
     </div>

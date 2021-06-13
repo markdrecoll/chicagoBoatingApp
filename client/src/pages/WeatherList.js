@@ -41,7 +41,7 @@ function WeatherList() {
         let newDate = date.split("-");
         return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
     }
-
+console.log('all data',itineraryData)
     return (
         <div className="justify-content-center">
             <div  className="card rounded p-5 my-4 bg-img justify-content-center" style={{backgroundImage: 'url("./assets/images/Chicago-Sunrise.jpeg")', backgroundSize:'cover', height:'500px', backgroundPosition: 'center', color:'white'}}>
@@ -65,9 +65,21 @@ function WeatherList() {
                             <h6 className="card-subtitle">Wind Speed</h6>
                             <p className="card-text">{kphToMph(weatherItem.windSpeed.noaa)} Mph {(weatherItem.windDirection.noaa).toFixed(0)}°</p>
                             <div className="card-footer row justify-content-center">
-                                <div className="col-6"><CreateItinerary  weatherDataStuff={weatherItem} /></div>
-                            
-                            <div className="col-6"><ViewItinerary  itineraryData={itineraryData} date={getTheDate(weatherItem.time)} /></div>
+                                {itineraryData.lenght==null? (<div className="col-6"><CreateItinerary  weatherDataStuff={weatherItem} /></div>):
+                                    (
+                                        <div className="col-6"><ViewItinerary  itineraryData={itineraryData} date={getTheDate(weatherItem.time)} /></div>
+                                    )}
+                                {itineraryData.map((itin)=>(
+                                    itin.date === getTheDate(weatherItem.time)?(
+                                        <div className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>,
+                                        <div className="col-6"><ViewItinerary  itineraryData={itineraryData} date={getTheDate(weatherItem.time)} /></div>
+                                    ):(
+                                        <div className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>
+                                    )
+                                ))}
+                                
+                                
+                                
                             </div>
                             
                         </div>

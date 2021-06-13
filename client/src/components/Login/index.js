@@ -43,43 +43,28 @@ export default function Login(props) {
     }
     return (
         <div className="  py-5 mt-5">
-            <div className="container d-flex justify-content-center text-end flex-column bg-primary text-light">
+            <div className="container text-end bg-primary text-light py-3">
             <h1>Please Log In</h1>
-
             <form onSubmit={handleSubmit}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <div>
-                    <button type="submit">Log In</button>
-                </div>
-
+                    <h4>Username</h4>
+                    <input className="form-control" type="text" onChange={e => setUserName(e.target.value)} />
+                    <h4>Password</h4>
+                    <input className="form-control" type="password" onChange={e => setPassword(e.target.value)} />
+                    <button className="btn btn-light mt-2" type="submit">Log In</button>
             </form>
-
             </div>
-            <div className="container border border-primary">
+
+            <div className="container border border-primary py-3">
             <h1>Please Sign up </h1>
-
             <form onSubmit={handleSignUp}>
-                <label>
-                    <p>Username</p>
-                    <input type="text" onChange={e => setUserName(e.target.value)} />
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password" onChange={e => setPassword(e.target.value)} />
-                </label>
-                <div>
-                    <button type="submit">Sign Up</button>
-                </div>
-
+                    <h4>Username</h4>
+                    <input className="form-control" type="text" onChange={e => setUserName(e.target.value)} />
+                    <h4>Password</h4>
+                    <input className="form-control" type="password" onChange={e => setPassword(e.target.value)} />
+                    <button className="btn btn-secondary mt-2" type="submit">Sign Up</button>
             </form>
             </div>
+            
         </div>
     )
 }

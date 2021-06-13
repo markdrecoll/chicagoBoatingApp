@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Label, Form, FormGroup } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const ViewItinerary = (props) => {
 
@@ -22,7 +22,7 @@ const ViewItinerary = (props) => {
             <Modal isOpen={modal} toggle={toggle} className={className}>
                 <ModalHeader toggle={toggle}></ModalHeader>
                 {activity.map(data => (
-                    <ModalBody>
+                    <ModalBody key={data.date}>
                         {data.date}<br />
                         {data.text}
                     </ModalBody>

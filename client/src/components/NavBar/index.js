@@ -19,11 +19,8 @@ function NavBar(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
       <div className="container-fluid">
-        <Link to="/" className="nav-link text-light">
-          <h3>Chicago Boating App</h3>
-        </Link>
-        <button
-          className="navbar-toggler"
+      <button
+          className="navbar-toggler bg-light"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarTogglerDemo01"
@@ -33,6 +30,10 @@ function NavBar(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        <Link to="/" className="nav-link text-light">
+          <h3>Chicago Boating App</h3>
+        </Link>
+        
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -40,25 +41,7 @@ function NavBar(props) {
                 Home
               </Link>
             </li>
-            {props.login ? (
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/" onClick={logout}>
-                  {' '}
-                  Logout
-                </Link>
-              </li>
-            ) : (
-              <li className="nav-item">
-                <Link
-                  className="nav-link text-light"
-                  to="/login"
-                  onClick={handleSignUp}
-                >
-                  {' '}
-                  Login/Sign Up
-                </Link>
-              </li>
-            )}
+            
 
             {props.login ? (
               <li className="nav-item">
@@ -83,6 +66,25 @@ function NavBar(props) {
                 Attractions
               </Link>
             </li>
+            {props.login ? (
+              <li className="nav-item">
+                <Link className="nav-link text-light" to="/" onClick={logout}>
+                  {' '}
+                  Logout
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-light"
+                  to="/login"
+                  onClick={handleSignUp}
+                >
+                  {' '}
+                  Login/Sign Up
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

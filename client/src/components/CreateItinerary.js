@@ -4,7 +4,6 @@ import API from '../utils/api'
 
 const CreateItinerary = (props) => {
   const {
-    buttonLabel,
     className
   } = props;
 

@@ -7,10 +7,11 @@ import Attraction from './pages/Attraction';
 import Axios from 'axios';
 import Landing from './pages/Landing';
 import Navbar from './components/NavBar';
+import Footer from './components/Footer'
 
 function App() {
   const [loginState, setLoginState] = useState(false);
-
+console.log('app.js login state', loginState)
   useEffect(() => {
     Axios.get('/api/user/loginCheck', { withCredentials: true }).then(function (
       loginCheck
@@ -21,10 +22,11 @@ function App() {
 
   return (
     <Router>
+        <Navbar setLoginState={setLoginState} login={loginState} />
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <Navbar setLoginState={setLoginState} login={loginState} />
+            
 
             {!loginState ? (
               <Switch>
@@ -35,7 +37,7 @@ function App() {
                   <Login setLoginState={setLoginState} />
                 </Route>
                 <Route exact path={'/harbor'}>
-                  <Harbor />
+                  <Harbor loginState={loginState} />
                 </Route>
                 <Route exact path={'/attraction'}>
                   <Attraction />
@@ -50,7 +52,7 @@ function App() {
                   <WeatherList />
                 </Route>
                 <Route exact path={'/harbor'}>
-                  <Harbor />
+                  <Harbor loginState={loginState} />
                 </Route>
                 <Route exact path={'/attraction'}>
                   <Attraction />
@@ -60,6 +62,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer/>
     </Router>
   );
 }

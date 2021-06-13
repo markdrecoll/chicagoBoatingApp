@@ -41,25 +41,7 @@ function NavBar(props) {
                 Home
               </Link>
             </li>
-            {props.login ? (
-              <li className="nav-item">
-                <Link className="nav-link text-light" to="/" onClick={logout}>
-                  {' '}
-                  Logout
-                </Link>
-              </li>
-            ) : (
-              <li className="nav-item">
-                <Link
-                  className="nav-link text-light"
-                  to="/login"
-                  onClick={handleSignUp}
-                >
-                  {' '}
-                  Login/Sign Up
-                </Link>
-              </li>
-            )}
+            
 
             {props.login ? (
               <li className="nav-item">
@@ -84,6 +66,25 @@ function NavBar(props) {
                 Attractions
               </Link>
             </li>
+            {props.login ? (
+              <li className="nav-item">
+                <Link className="nav-link text-light" to="/" onClick={logout}>
+                  {' '}
+                  Logout
+                </Link>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <Link
+                  className="nav-link text-light"
+                  to="/login"
+                  onClick={handleSignUp}
+                >
+                  {' '}
+                  Login/Sign Up
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

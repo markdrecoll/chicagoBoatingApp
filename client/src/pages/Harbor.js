@@ -4,9 +4,9 @@ import API from "../utils/api";
 import GoogleMap from "../components/GoogleMap"
 // import e from 'cors';
 
-function Harbor() {
+function Harbor(props) {
     const [favHarbor, setFavHarbor]=useState('')
-
+console.log('this mah props', props)
     useEffect(() => {
         handleHarborSave();
       }, []);
@@ -51,7 +51,8 @@ const handleHarborSave=(harborName)=>{
             </li> */}
           </ul>
           <div className="footer mt-auto pb-2 pt-3 bg-light justify-content-center">
-            <button className="btn btn-primary col-md-6 mb-2 me-2" onClick={()=>handleHarborSave(harbor.name)}>Save as Favorite</button>
+              {props.loginState === true?(<button className="btn btn-primary col-md-6 mb-2 me-2" onClick={()=>handleHarborSave(harbor.name)}>Save as Favorite</button>):(<button className="btn btn-primary col-md-6 mb-2 me-2 d-none" onClick={()=>handleHarborSave(harbor.name)}>Save as Favorite</button>)}
+            
             {favHarbor === harbor.name?(<button className="btn btn-success mb-2">Favorite</button>):(<button className="btn btn-success d-none">Favorite</button>)}
           </div>
           

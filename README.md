@@ -23,7 +23,7 @@
   User logs in or registers, then is displayed the weather list. They can then select a day and create an itinerary.
 
   ## Collaboration
-  This project was created by  
+  This project was created by:  
   [Mark Drecoll](https://github.com/markdrecoll),  
   [Levi Kane](https://github.com/levickane), and  
   [Harrison Blackburn](https://github.com/harrisonblackburn)

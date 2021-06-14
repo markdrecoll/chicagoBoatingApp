@@ -17,8 +17,7 @@
   ## Installation
   >npm install  
   >npm install google-map-react  
-  >npm start  
-(to run locally)
+  >npm start
 
   ## Usage
   User logs in or registers, then is displayed the weather list. They can then select a day and create an itinerary.

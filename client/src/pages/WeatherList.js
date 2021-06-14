@@ -21,6 +21,7 @@ function WeatherList() {
             })
 
         API.getItinery().then((data) => {
+            console.log('front end get itin',data)
             setItineraryData(data.data);
         })
     }, []);
@@ -39,7 +40,7 @@ function WeatherList() {
         let newDate = date.split("-");
         return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
     }
-console.log('all data',itineraryData)
+// console.log('front end data',itineraryData)
     return (
         <div className="justify-content-center">
             <div  className="card rounded p-5 my-4 bg-img justify-content-center" style={{backgroundImage: 'url("./assets/images/Chicago-Sunrise.jpeg")', backgroundSize:'cover', height:'500px', backgroundPosition: 'center', color:'white'}}>

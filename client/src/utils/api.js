@@ -11,7 +11,7 @@ export default {
         return axios.get("");
     },
     getItinery: function(){
-        return axios.get("/api/activity/allItineraries");
+        return axios.get("/api/activity/myItinerary");
     },
     setHarborForUser: function(harbor) {
         return axios.put("/api/harbor", 

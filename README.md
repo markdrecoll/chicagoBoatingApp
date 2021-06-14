@@ -26,11 +26,14 @@
   [Solomon Laude](https://github.com/SolomonL6)
 
   ## Questions
-  Email: markdrecoll@gmail.com
+  Email
+  mark@markdrecoll.com
+  blackbhr@yahoo.com
+  [Levi Kane](https://github.com/levickane)
   
   ## Screenshots
-  ![chicagoBoatingApp_Screenshot01](https://user-images.githubusercontent.com/77694281/121936245-08c0f900-cd0f-11eb-95a4-d25483223b75.PNG)
-![chicagoBoatingApp_Screenshot02](https://user-images.githubusercontent.com/77694281/121936250-09f22600-cd0f-11eb-8458-5028b421138d.PNG)
+  <img src="https://user-images.githubusercontent.com/77694281/121936245-08c0f900-cd0f-11eb-95a4-d25483223b75.PNG" width="300px" height="300px">
+  <img src="https://user-images.githubusercontent.com/77694281/121936250-09f22600-cd0f-11eb-8458-5028b421138d.PNG" width="300px" height="300px">
 
 
 

@@ -1,5 +1,3 @@
-![chicagoBoatingApp_Screenshot03](https://user-images.githubusercontent.com/77694281/121937189-08752d80-cd10-11eb-8ad6-8bacc1b24dbc.PNG)
-![chicagoBoatingApp_Screenshot04](https://user-images.githubusercontent.com/77694281/121937196-09a65a80-cd10-11eb-911e-6376617441db.PNG)
 # Chicago Boating App
   ## Table of Contents
    - [Demonstration](#Demonstration)

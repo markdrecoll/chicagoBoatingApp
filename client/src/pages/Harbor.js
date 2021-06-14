@@ -14,6 +14,7 @@ const handleHarborSave=(harborName)=>{
         console.log(data)
         setFavHarbor(data.data.harbor)
     })
+    getHarbor()
 }
 
 const getHarbor =()=>{

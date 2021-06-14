@@ -27,6 +27,9 @@ router.post("/signup", (req, res) => {
             res.json({ user: newUser, message: 'You are now logged in.', logged_in: true });
         });
     })
+    .catch((err)=>{
+        console.log("******UserName Already EXISTS******** \n", err)
+    })
 })
 
 router.get('/loginCheck', (req, res) => {

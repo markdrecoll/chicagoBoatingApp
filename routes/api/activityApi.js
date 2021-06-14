@@ -2,6 +2,7 @@ const router = require("express").Router();
 const axios = require('axios')
 const Itinerary = require("../../models/itinerary");
 var mongoose = require('mongoose');
+const db = require('../../models');
 
 router.post('/', function (req, res) {
     Itinerary.create({ text: req.body.text, user: req.session.user_id, date:req.body.date }).then(function (newItin) {
@@ -9,13 +10,18 @@ router.post('/', function (req, res) {
     })
 })
 
-router.get('/myItinerary', function (req, res) {
-    Itinerary.find({
-        'user': mongoose.Types.ObjectId(req.session.user_id)
-    }, function (err, docs) {
-        console.log(docs);
-        res.json(docs);
-    });
+router.get('/myItinerary', (req, res) =>{
+    console.log('itin route hitt!!!!', req.session.user_id)
+    console.log('ITIN req.body',req.body)
+    if (req.session.user_id) {
+        db.Itinerary.find
+        ({user: req.session.user_id}).then(itinFound => {
+            console.log('itin found',itinFound)
+            res.json(itinFound)
+    })
+    } else {
+        res.send('Cant find the Itinery, breaux')
+    }
 })
 
 router.get('/allItineraries', function (req, res) {

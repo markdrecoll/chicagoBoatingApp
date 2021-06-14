@@ -6,6 +6,7 @@
    - [Usage](#Usage)
    - [Collaboration](#Collaboration)
    - [Questions](#Questions)
+   - [Screenshots](#Screenshots)
   
   ## Demonstration
   Live Demo: https://chicagoboatingapp.herokuapp.com/
@@ -26,5 +27,10 @@
 
   ## Questions
   Email: markdrecoll@gmail.com
+  
+  ## Screenshots
+  ![chicagoBoatingApp_Screenshot01](https://user-images.githubusercontent.com/77694281/121936245-08c0f900-cd0f-11eb-95a4-d25483223b75.PNG)
+![chicagoBoatingApp_Screenshot02](https://user-images.githubusercontent.com/77694281/121936250-09f22600-cd0f-11eb-8458-5028b421138d.PNG)
+
 
 

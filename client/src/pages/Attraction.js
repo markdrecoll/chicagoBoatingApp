@@ -16,7 +16,7 @@ function Attraction() {
         <div className="card col-12 mx-2 my-2" key={attraction.id} onClick={()=> API.setAttractionForUser(attraction.name)}>
           <h2 className="card-header fluid">{attraction.name}</h2>
           <p><strong>Description:</strong> {attraction.description}</p>
-          <img src={attraction.image_link} alt={attraction.name} style={{backgroundSize: "cover"}}/>
+          <img className="my-auto" src={attraction.image_link} alt={attraction.name} style={{backgroundSize: "cover"}}/>
         </div>
       ))}
     </div>

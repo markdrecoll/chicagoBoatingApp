@@ -2,13 +2,13 @@ import React, {useState, useEffect} from 'react';
 import harborData from '../harborData.json';
 import API from "../utils/api";
 import GoogleMap from "../components/GoogleMap"
-// import e from 'cors';
 
 function Harbor(props) {
     const [favHarbor, setFavHarbor]=useState('')
     useEffect(() => {
         getHarbor()
       }, []);
+
 const handleHarborSave=(harborName)=>{
     API.setHarborForUser(harborName).then((data)=>{
         setFavHarbor(data.data.harbor)
@@ -23,13 +23,34 @@ const getHarbor =()=>{
             })
             .catch((err)=>console.log('no favorite'))
 }
+
+const [currentLocation, setCurrentLocation] = useState(
+  {
+    lat:41.87,
+    lng:-87.62
+  }
+)
+
+function viewHarborClick(e){
+  setCurrentLocation(
+    {
+      lat:41.7772,
+      lng:-87.5742
+    }
+  )
+}
+
+// lat:41.7772,
+// lng:-87.5742
+
+
   return (
     <div className="container row justify-content-center">
       <h1 className="col-12 bg-light p-5">Harbor Information</h1>
       
       <GoogleMap 
-      lat="41.75"
-      lon="-88.15" />
+      center2 = {currentLocation}
+       />
 
         <div className="bg-light p-5">
         <h2>Choose your Harbor</h2>
@@ -52,7 +73,8 @@ const getHarbor =()=>{
             </li>
             {/* MAKE THIS PASS IN LAT AND LONG TO GOOGLE MAPS
             <li>
-              <button data-address={harbor.address}>Map</button>
+              <button onClick={viewHarborClick}>Map</button>
+              data-address={harbor.address}
             </li> */}
           </ul>
           <div className="footer mt-auto pb-2 pt-3 bg-light justify-content-center">

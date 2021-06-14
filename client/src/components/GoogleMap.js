@@ -8,21 +8,20 @@ class SimpleMap extends Component {
     center: {
       lat: 41.87,
       lng: -87.62
-    },
-    zoom: 11
+      },
+    zoom: 11.2
   };
-
-// lat: 41.75,
-// lng: -88.15
  
   render() {
     return (
+      
       // Important! Always set the container height explicitly
       <div className="col-12 col-lg-10" style={{height: "500px"}}>
+        {console.log(this.props)}
         <GoogleMapReact
         // google docs say exposure of this key is safe
           bootstrapURLKeys={{ key: 'AIzaSyBXqijcOrdKWgN_LKVMViIic6_tLpzrM2A'}}
-          defaultCenter={this.props.center}
+          defaultCenter={this.props.center2}
           defaultZoom={this.props.zoom}
         >
           <AnyReactComponent
@@ -30,13 +29,11 @@ class SimpleMap extends Component {
             lng={-87.638}
             text="Belmont"
           />
-
         <AnyReactComponent
             lat={41.960}
             lng={-87.642}
             text="Montrose"
           />
-
         <AnyReactComponent
             lat={41.9284}
             lng={-87.6342}

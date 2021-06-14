@@ -14,12 +14,9 @@ router.put('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log('this is mah req.session.user_id', req.session.user_id)
-    console.log('this the req.body',req.body)
     if (req.session.user_id) {
         db.User.find
         ({_id: req.session.user_id}).then(harborFound => {
-            console.log('harbor found',harborFound[0].harbor)
             res.json(harborFound[0].harbor)
         })
     } else {

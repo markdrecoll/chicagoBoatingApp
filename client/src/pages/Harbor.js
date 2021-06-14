@@ -11,7 +11,6 @@ function Harbor(props) {
       }, []);
 const handleHarborSave=(harborName)=>{
     API.setHarborForUser(harborName).then((data)=>{
-        console.log(data)
         setFavHarbor(data.data.harbor)
     })
     getHarbor()
@@ -20,7 +19,6 @@ const handleHarborSave=(harborName)=>{
 const getHarbor =()=>{
     API.getHarborForUser()
             .then((res)=>{
-                console.log(res.data)
                 setFavHarbor(res.data)
             })
             .catch((err)=>console.log('no favorite'))

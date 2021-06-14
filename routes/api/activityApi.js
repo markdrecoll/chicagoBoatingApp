@@ -11,12 +11,9 @@ router.post('/', function (req, res) {
 })
 
 router.get('/myItinerary', (req, res) =>{
-    console.log('itin route hitt!!!!', req.session.user_id)
-    console.log('ITIN req.body',req.body)
     if (req.session.user_id) {
         db.Itinerary.find
         ({user: req.session.user_id}).then(itinFound => {
-            console.log('itin found',itinFound)
             res.json(itinFound)
     })
     } else {

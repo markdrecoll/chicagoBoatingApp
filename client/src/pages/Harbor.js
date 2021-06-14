@@ -28,7 +28,9 @@ const getHarbor =()=>{
     <div className="container row justify-content-center">
       <h1 className="col-12 bg-light p-5">Harbor Information</h1>
       
-      <GoogleMap />
+      <GoogleMap 
+      lat="41.75"
+      lon="-88.15" />
 
         <div className="bg-light p-5">
         <h2>Choose your Harbor</h2>
@@ -45,9 +47,6 @@ const getHarbor =()=>{
             </li>
             <li>
               <strong>Phone:</strong> {harbor.phone}
-            </li>
-            <li>
-              <strong>Fax:</strong> {harbor.fax}
             </li>
             <li>
               <strong>Email:</strong> {harbor.email}

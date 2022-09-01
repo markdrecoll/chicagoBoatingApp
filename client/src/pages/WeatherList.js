@@ -26,18 +26,26 @@ function WeatherList() {
     }, []);
 
     function celciusToFahrenheit(temperature) {
-        return ((temperature * (9 / 5)) + 32).toFixed(0);
+        if(temperature){
+            return ((temperature * (9 / 5)) + 32).toFixed(0);
+        }
     }
     function kphToMph(speed) {
-        return (speed / 1.609344).toFixed(0);
+        if(speed){
+            return (speed / 1.609344).toFixed(0);
+        }
     }
     function metersToFeet(measurement) {
-        return (measurement * 3.28).toFixed(1);
+        if(measurement){
+            return (measurement * 3.28).toFixed(1);
+        }
     }
     function getTheDate(apiDate) {
-        let date = apiDate.split("T")[0];
-        let newDate = date.split("-");
-        return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
+        if(apiDate){
+            let date = apiDate.split("T")[0];
+            let newDate = date.split("-");
+            return newDate[1] + "/" + newDate[2] + "/" + newDate[0]
+        }
     }
     return (
         <div className="justify-content-center">

@@ -68,5 +68,47 @@
     "address": "6400 S. Coast Guard Drive Chicago, IL 60649",
     "phone": "773-947-8501",
     "email": "jacksonouter@chicagoharbors.com"
+  },
+  {
+    "id": "11",
+    "name": "Wilmette Harbor",
+    "address": "20 Harbor Drive Wilmette, IL 60091",
+    "phone": "847-251-4234",
+    "email": ""
+  },
+  {
+    "id": "12",
+    "name": "Waukegan Harbor & Marina",
+    "address": "55 S Harbor Pl, Waukegan, IL 60085",
+    "phone": "847-244-3133",
+    "email": ""
+  },
+  {
+    "id": "13",
+    "name": "Southport Marina",
+    "address": "21 56th Street Kenosha, WI 53140",
+    "phone": "262-657-5565",
+    "email": "cs@spmarina.net"
+  },
+  {
+    "id": "14",
+    "name": "McKinley Marina Center Docks",
+    "address": "9480 W. Watertown Plank Road Wauwatosa, WI 53226",
+    "phone": "414-257-7275",
+    "email": ""
+  },
+  {
+    "id": "15",
+    "name": "Michigan City Port Authority",
+    "address": "200 Heisman Harbor Road Michigan City, IN 46360",
+    "phone": "219-872-1712",
+    "email": "tframe@mcmarina.org"
+  },
+  {
+    "id": "16",
+    "name": "New Buffalo Harbor",
+    "address": "224 W. Buffalo St. New Buffalo, MI 49117",
+    "phone": "269-469-3574",
+    "email": "parks@cityofnewbuffalo.org"
   }
 ]

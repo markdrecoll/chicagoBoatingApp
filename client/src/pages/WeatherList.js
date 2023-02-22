@@ -61,9 +61,9 @@ function WeatherList() {
                 {weatherList.map(weatherItem => (
                     <div className="card col-lg-3 mx-3 my-2"  key={weatherItem.time}>
                         <div className="card-body row">
-                            <h4 className="card-title card-header mb-3 text-center">{getTheDate(weatherItem.time)}</h4>
+                            <h4 className="card-title card-header mb-3 text-center">{weatherItem.time ? (getTheDate(weatherItem.time)) : "n/a"}</h4>
                             <h6 className="card-subtitle">Wave Height</h6>
-                            <p className="card-text">{metersToFeet(weatherItem.waveHeight.meteo)}ft {(weatherItem.waveDirection.meteo).toFixed(0)}°</p>
+                            {/* <p className="card-text">{(weatherItem.waveHeight.meteo && weatherItem.waveDirection.meteo) ? (metersToFeet(weatherItem.waveHeight.meteo)ft weatherItem.waveDirection.meteo.toFixed(0))°) : "n/a"}</p> */}
                             {weatherItem.waveHeight.meteo > .8 ? (<p className="bg-danger p-2 text-light">Dangerous Wave Condtions</p>): weatherItem.waveHeight.meteo < .3 ?(<p className="bg-success p-2 text-light rounded-3">Optimal Boating Conditions</p>):(<p className="bg-warning p-2 rounded-1">Proceed with Caution</p>)}
                             <h6 className="card-subtitle">Water Temperature</h6>
                             <p className="card-text">{celciusToFahrenheit(weatherItem.waterTemperature.noaa)}° F</p>

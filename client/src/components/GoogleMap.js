@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
- 
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
       lat: 41.87,
       lng: -87.62
-      },
+    },
     zoom: 11.2
   };
- 
+
   render() {
     return (
-      
+
       // Important! Always set the container height explicitly
-      <div className="col-12 col-lg-10" style={{height: "500px"}}>
+      <div className="col-12 col-lg-10" style={{ height: "500px" }}>
         {console.log(this.props)}
         <GoogleMapReact
-        // google docs say exposure of this key is safe
-          bootstrapURLKeys={{ key: 'AIzaSyBXqijcOrdKWgN_LKVMViIic6_tLpzrM2A'}}
+          // google docs say exposure of this key is safe
+          bootstrapURLKeys={{ key: 'AIzaSyBXqijcOrdKWgN_LKVMViIic6_tLpzrM2A' }}
           defaultCenter={this.props.center2}
           defaultZoom={this.props.zoom}
         >
@@ -29,17 +29,17 @@ class SimpleMap extends Component {
             lng={-87.638}
             text="Belmont"
           />
-        <AnyReactComponent
+          <AnyReactComponent
             lat={41.960}
             lng={-87.642}
             text="Montrose"
           />
-        <AnyReactComponent
+          <AnyReactComponent
             lat={41.9284}
             lng={-87.6342}
             text="Diversey"
           />
-        <AnyReactComponent
+          <AnyReactComponent
             lat={41.8368}
             lng={-87.6065}
             text="31st"
@@ -64,15 +64,48 @@ class SimpleMap extends Component {
             lng={-87.5790}
             text="59th"
           />
-           <AnyReactComponent
+          <AnyReactComponent
             lat={41.7772}
             lng={-87.5742}
             text="Jackson"
           />
+          <AnyReactComponent
+            lat={42.0778}
+            lng={-87.6790}
+            text="Wilmette"
+          />
+          <AnyReactComponent
+            lat={42.3589}
+            lng={-87.8243}
+            text="Waukegan"
+          />
+          <AnyReactComponent
+            lat={42.6723}
+            lng={-87.8058}
+            text="Kenosha"
+          />
+          <AnyReactComponent
+            lat={43.04510}
+            lng={-87.8802}
+            text=""
+          />
+          <AnyReactComponent
+            lat={41.7280}
+            lng={-86.9129}
+            text="Michigan City"
+          />
+          <AnyReactComponent
+            lat={41.7981}
+            lng={-86.7447}
+            text="New Buffalo"
+          />
+
+
+
         </GoogleMapReact>
       </div>
     );
   }
 }
- 
+
 export default SimpleMap;

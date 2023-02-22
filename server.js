@@ -13,13 +13,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 
-// This is temporarily removed to test if this is an issue
+// This is the original
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
 
+// This is an attempt at fixing based on this stack overflow post:
+// https://stackoverflow.com/questions/50947450/deploy-to-heroku-uncaught-syntaxerror-unexpected-token
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(__dirname, "/client/build"));
+    app.use(express.static(__dirname, "/client/build/"));
   }
 
 const sess = {

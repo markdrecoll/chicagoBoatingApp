@@ -16,7 +16,6 @@
 
   ## Installation
   >npm install  
-  >npm install google-map-react  
   >npm start
 
   ## Usage

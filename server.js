@@ -12,9 +12,15 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
+
+// This is temporarily removed to test if this is an issue
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+    app.use(express.static("/client/build"));
+  }
 
 const sess = {
   secret: 'Super secret secret',

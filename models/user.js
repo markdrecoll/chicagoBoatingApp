@@ -1,5 +1,8 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
+    // This was original
+    // bcrypt = require('bcrypt'),
+    // This was changed after uninstalling bcrypt and installing bcryptjs which was supposed to fix a build issue
     bcrypt = require('bcryptjs'),
     SALT_WORK_FACTOR = 10;
 

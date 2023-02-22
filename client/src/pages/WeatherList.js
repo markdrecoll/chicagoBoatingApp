@@ -21,7 +21,7 @@ function WeatherList() {
             })
 
         API.getItinery().then((data) => {
-            setItineraryData(data.data);
+            setItineraryData(data.data);d
         })
     }, []);
 
@@ -82,11 +82,7 @@ function WeatherList() {
                                         <div key={itin._id} className="d-none"><CreateItinerary  weatherDataStuff={weatherItem} /></div>
                                     )
                                 ))}
-                                
-                                
-                                
                             </div>
-                            
                         </div>
                     </div>
                 ))}
